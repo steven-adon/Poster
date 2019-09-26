@@ -4,7 +4,7 @@
     <div class="images_container">
       <!-- 海报html元素 -->
       <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml">
-        <div style="color: #f90; font-weight: 800; text-align: start; padding-left: 10px;">{{posterContent}}</div>
+        <div style="color: #f90; font-size: 21px; font-weight: 800; text-align: start; padding-left: 10px;">{{posterContent}}</div>
         <!-- 二维码 -->
         <div class="qrcode">
           <div id="qrcodeImg"></div>
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       posterContent: '众乐乐', // 文案内容
-      posterHtmlBg: require('../assets/poster.jpeg'),
+      posterHtmlBg: require('../assets/bmr1o-st73u.png'),
       posterImg: '' // 最终生成的海报图片
     }
   },
@@ -45,8 +45,8 @@ export default {
       let qrcode = new QRCode(qrcodeImgEl, {
         width: 128,
         height: 128,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
+        colorDark: '#e6954e',
+        colorLight: '#f9ecc7',
         correctLevel: QRCode.CorrectLevel.H
       })
       qrcode.makeCode(text)
@@ -85,8 +85,8 @@ svg {
 }
 
 .posterHtml {
-  height: 548px;
-  width: 400px;
+  height: 822px;
+  width: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -94,13 +94,13 @@ svg {
 }
 .qrcode {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 6px;
+  bottom: 4px;
   width: 128px;
 }
 .finalImg {
-  height: 548px;
-  width: 400px;
+  height: 822px;
+  width: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

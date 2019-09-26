@@ -52,7 +52,8 @@ h5 {
 }
 
 main {
-  width: 800px;
+  /* width: 800px; */
+  width: 100%;
   margin: 0 auto;
   display: table;
 }
