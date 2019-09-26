@@ -4,7 +4,7 @@
     <div class="images_container">
       <!-- 海报html元素 -->
       <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml">
-        <div style="color: #f90; font-weight: 600;">{{posterContent}}</div>
+        <div style="color: #f90; font-weight: 800; text-align: start; padding-left: 10px;">{{posterContent}}</div>
         <!-- 二维码 -->
         <div class="qrcode">
           <div id="qrcodeImg"></div>
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import posterBgImg from '../assets/poster.jpg'
-import qrcodeImg from '../assets/qrcode.png'
+import posterBgImg from '../assets/poster.jpeg'
+// import qrcodeImg from '../assets/qrcode.png'
 
 import QRCode from 'qrcodejs2'
 import html2canvas from 'html2canvas'
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       posterContent: '众乐乐', // 文案内容
-      posterHtmlBg: require('../assets/poster.jpg'),
+      posterHtmlBg: require('../assets/poster.jpeg'),
       posterImg: '' // 最终生成的海报图片
     }
   },
@@ -94,8 +94,8 @@ svg {
 }
 .qrcode {
   position: absolute;
-  right: 30px;
-  bottom: 30px;
+  right: 10px;
+  bottom: 10px;
   width: 128px;
 }
 .finalImg {
