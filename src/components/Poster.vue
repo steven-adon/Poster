@@ -43,8 +43,8 @@ export default {
       const qrcodeImgEl = document.getElementById('qrcodeImg')
       qrcodeImgEl.innerHTML = ''
       let qrcode = new QRCode(qrcodeImgEl, {
-        width: 256,
-        height: 256,
+        width: 128,
+        height: 128,
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.H
@@ -92,7 +92,7 @@ svg {
   background-size: cover;
 }
 .qrcode {
-  width: 256px;
+  width: 128px;
 }
 .finalImg {
   height: 400px;
