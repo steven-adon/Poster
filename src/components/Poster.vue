@@ -85,7 +85,7 @@ svg {
 }
 
 .posterHtml {
-  height: 400px;
+  height: 548px;
   width: 400px;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@ svg {
   width: 128px;
 }
 .finalImg {
-  height: 400px;
+  height: 548px;
   width: 400px;
   background-position: center;
   background-repeat: no-repeat;
