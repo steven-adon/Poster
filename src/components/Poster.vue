@@ -87,9 +87,9 @@ svg {
 .posterHtml {
   height: 400px;
   width: 400px;
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .qrcode {
   width: 256px;
@@ -97,8 +97,8 @@ svg {
 .finalImg {
   height: 400px;
   width: 400px;
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
