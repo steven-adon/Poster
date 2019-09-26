@@ -34,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    this.createQrcode('http://h5lk6.com')
+    this.createQrcode('http://h5lk6.com?shareCode="1234')
     this.createPoster()
   },
   methods: {
@@ -90,8 +90,12 @@ svg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 .qrcode {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
   width: 128px;
 }
 .finalImg {
