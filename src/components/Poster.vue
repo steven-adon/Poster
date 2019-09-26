@@ -4,7 +4,7 @@
     <div class="images_container">
       <!-- 海报html元素 -->
       <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml">
-        <div style="color: #f90; font-size: 21px; font-weight: 800; text-align: start; padding-left: 10px;">{{posterContent}}</div>
+        <div style="color: #db3939; font-size: 31px; font-weight: 800; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;">{{posterContent}}</div>
         <!-- 二维码 -->
         <div class="qrcode">
           <div id="qrcodeImg"></div>
@@ -41,12 +41,12 @@ export default {
     createQrcode(text) {
       // 生成二维码
       const qrcodeImgEl = document.getElementById('qrcodeImg')
-      qrcodeImgEl.innerHTML = ''
+      qrcodeImgEl.innerHTML = 'vue'
       let qrcode = new QRCode(qrcodeImgEl, {
-        width: 128,
-        height: 128,
+        width: 150,
+        height: 150,
         colorDark: '#e6954e',
-        colorLight: '#f9ecc7',
+        colorLight: '#fbf7e1',
         correctLevel: QRCode.CorrectLevel.H
       })
       qrcode.makeCode(text)
@@ -85,8 +85,8 @@ svg {
 }
 
 .posterHtml {
-  height: 822px;
-  width: 600px;
+  height: 685px;
+  width: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,12 +95,16 @@ svg {
 .qrcode {
   position: absolute;
   right: 6px;
-  bottom: 4px;
-  width: 128px;
+  top: 4px;
+  width: 150px;
 }
+
+/* .qrcodeImg {
+  width:
+} */
 .finalImg {
-  height: 822px;
-  width: 600px;
+  height: 685px;
+  width: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
