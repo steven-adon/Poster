@@ -33,7 +33,7 @@ export default {
     }
   },
   mounted() {
-    let shareCode = this.getUrlKey('shareCode')
+    let shareCode = this.getUrlKey('code')
 
     var that = this;
     jQuery(function() {
