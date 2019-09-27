@@ -33,11 +33,13 @@ export default {
     }
   },
   mounted() {
+    let shareCode = this.getUrlKey('shareCode')
+
     var that = this;
     jQuery(function() {
       jQuery('#output').qrcode({
         render: 'canvas', //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
-        text: 'http://h5lk6.com', //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+        text: `http://h5lk6.com?shareCode=${shareCode}`, //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
         width: 150, //二维码的宽度
         height: 150,
         background: '#fbf7e1', //二维码的后景色
@@ -48,10 +50,13 @@ export default {
       })
       setTimeout(() => {
         that.createPoster()
-      }, 200)
+      }, 1000)
     })
   },
   methods: {
+    getUrlKey(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+    },
     createPoster() {
       // 生成海报
       const vm = this
