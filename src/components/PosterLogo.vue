@@ -1,10 +1,9 @@
 <template>
   <section>
-    <h2>Poster Image</h2>
-
+    <h4>获取您的专属二维码</h4>
     <div class="images_container">
       <!-- 海报html元素 -->
-      <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml">
+      <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml" v-show="originShow">
         <div
           style="color: #db3939; font-size: 31px; font-weight: 800; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;"
         >{{posterContent}}</div>
@@ -27,6 +26,7 @@ import html2canvas from 'html2canvas'
 export default {
   data() {
     return {
+      originShow: true,
       posterContent: '众乐乐', // 文案内容
       posterHtmlBg: require('../assets/bmr1o-st73u.png'),
       posterImg: '' // 最终生成的海报图片
@@ -73,6 +73,7 @@ export default {
       }).then(function(canvas) {
         // 在微信里,可长按保存或转发
         vm.posterImg = canvas.toDataURL('image/png')
+        vm.originShow = false
       })
     }
   }
@@ -83,7 +84,7 @@ export default {
 .images_container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .posterHtml {

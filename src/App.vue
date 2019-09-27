@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <main>
-      <h1>Sample Vue.js SVG Icon System</h1>
+      <h1>众乐乐代理海报系统</h1>
       <PosterLogo />
       <!-- <poster /> -->
-      <app-typography-icon />
+      <!-- <app-typography-icon /> -->
       <app-animated-icon />
     </main>
   </div>
@@ -63,7 +63,8 @@ main {
 
 section {
   padding: 20px;
-  margin-top: 10px;
+  padding-top: 5px;
+  margin-top: 1px;
   background: #fff;
   border: 1px solid #eee;
 }
