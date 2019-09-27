@@ -2,7 +2,8 @@
   <div id="app">
     <main>
       <h1>Sample Vue.js SVG Icon System</h1>
-      <poster />
+      <PosterLogo />
+      <!-- <poster /> -->
       <app-typography-icon />
       <app-animated-icon />
     </main>
@@ -13,12 +14,14 @@
 import AppTypographyIcon from './components/AppTypographyIcon'
 import AppAnimatedIcon from './components/AppAnimatedIcon'
 import Poster from './components/Poster'
+import PosterLogo from './components/PosterLogo'
 
 export default {
   components: {
     AppTypographyIcon,
     AppAnimatedIcon,
-    Poster
+    Poster,
+    PosterLogo
   }
 }
 </script>

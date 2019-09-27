@@ -1,16 +1,16 @@
 <template>
   <section>
     <h2>Poster Image</h2>
+
     <div class="images_container">
       <!-- 海报html元素 -->
       <div id="posterHtml" :style="{backgroundImage: 'url('+posterHtmlBg+')'}" class="posterHtml">
-        <div style="color: #db3939; font-size: 31px; font-weight: 800; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;">{{posterContent}}</div>
+        <div
+          style="color: #db3939; font-size: 31px; font-weight: 800; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;"
+        >{{posterContent}}</div>
         <!-- 二维码 -->
-        <div class="qrcode">
-          <div id="qrcodeImg"></div>
-        </div>
+        <div id="output" class="qrcode"></div>
       </div>
-
       <div>
         <img :src="posterImg" alt class="finalImg" />
       </div>
@@ -19,10 +19,9 @@
 </template>
 
 <script>
+import ICON from '../assets/ICON.png'
 import posterBgImg from '../assets/poster.jpeg'
-// import qrcodeImg from '../assets/qrcode.png'
 
-import QRCode from 'qrcodejs2'
 import html2canvas from 'html2canvas'
 
 export default {
@@ -34,23 +33,25 @@ export default {
     }
   },
   mounted() {
-    this.createQrcode('http://h5lk6.com?shareCode="1234')
-    this.createPoster()
+    var that = this;
+    jQuery(function() {
+      jQuery('#output').qrcode({
+        render: 'canvas', //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+        text: 'http://h5lk6.com', //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+        width: 150, //二维码的宽度
+        height: 150,
+        background: '#fbf7e1', //二维码的后景色
+        foreground: '#e6954e', //二维码的前景色
+        src: ICON,
+        imgWidth: 50,
+        imgHeight: 50
+      })
+      setTimeout(() => {
+        that.createPoster()
+      }, 200)
+    })
   },
   methods: {
-    createQrcode(text) {
-      // 生成二维码
-      const qrcodeImgEl = document.getElementById('qrcodeImg')
-      qrcodeImgEl.innerHTML = 'vue'
-      let qrcode = new QRCode(qrcodeImgEl, {
-        width: 150,
-        height: 150,
-        colorDark: '#e6954e',
-        colorLight: '#fbf7e1',
-        correctLevel: QRCode.CorrectLevel.H
-      })
-      qrcode.makeCode(text)
-    },
     createPoster() {
       // 生成海报
       const vm = this
@@ -95,9 +96,6 @@ export default {
   width: 150px;
 }
 
-/* .qrcodeImg {
-  width:
-} */
 .finalImg {
   height: 685px;
   width: 500px;
