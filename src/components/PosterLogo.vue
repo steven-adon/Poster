@@ -7,6 +7,9 @@
         <div
           style="color: #db3939; font-size: 31px; font-weight: 800; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;"
         >{{posterContent}}</div>
+        <div style="color: #db3939; font-size: 11px; font-weight: 300; text-align: start; padding-left: 10px; font-family: 'Nunito', sans-serif;">
+          微信内查看
+        </div>
         <!-- 二维码 -->
         <div id="output" class="qrcode"></div>
       </div>
