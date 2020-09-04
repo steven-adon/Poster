@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.4",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "qrcodejs2": "0.0.2",
     "sass-loader": "^6.0.6",
     "vue": "^2.5.2",
